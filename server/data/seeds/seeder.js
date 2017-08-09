@@ -1,4 +1,4 @@
-const seedCustomers = require('./seeds/customersSeed');
+const seedCustomers = require('./seeds/customers');
 
 const seeder = () => {
   seedCustomers();

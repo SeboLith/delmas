@@ -1,5 +1,5 @@
-const Customer = require('./customerQuery');
-const Customers = require('./customersQuery');
+const Customer = require('./customer');
+const Customers = require('./customers');
 
 module.exports = {
   Customer,

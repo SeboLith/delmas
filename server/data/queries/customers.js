@@ -1,8 +1,8 @@
 const { GraphQLList } = require('graphql');
 
 const getProjection = require('../../utils/projection');
-const CustomerType = require('../types/customerType');
-const Customer = require('../models/customerModel');
+const CustomerType = require('../types/customer');
+const Customer = require('../models/customer');
 
 module.exports = {
   type: new GraphQLList(CustomerType),

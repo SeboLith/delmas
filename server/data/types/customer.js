@@ -1,7 +1,6 @@
 const {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLInt,
   GraphQLID,
   GraphQLNonNull
 } = require('graphql');
@@ -13,6 +12,7 @@ module.exports = new GraphQLObjectType({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
     email: { type: GraphQLString },
-    age: { type: GraphQLInt }
+    created_at: { type: GraphQLString },
+    updated_at: { type: GraphQLString }
   })
 });
