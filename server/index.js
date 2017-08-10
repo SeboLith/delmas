@@ -9,7 +9,6 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const schema = require('./data/schema');
-const seeder = require('./data/seeds/seeder');
 
 require('dotenv').config();
 
@@ -31,11 +30,6 @@ conn.on('error', console.error.bind(console, 'connection error:'));
 conn.once('open', function() {
   console.log('Connected to Mongo DB!');
 });
-
-// Seed our database in the develooment environment
-if (dev) {
-  seeder();
-}
 
 app.prepare().then(() => {
   const server = express();

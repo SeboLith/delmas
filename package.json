@@ -4,6 +4,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
+    "seed": "node ./server/data/seeds/seeder.js",
     "dev": "NODE_ENV=development nodemon server",
     "build": "next build",
     "start": "NODE_ENV=production npm run build && node server",
