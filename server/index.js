@@ -12,24 +12,8 @@ const schema = require('./data/schema');
 
 require('dotenv').config();
 
-// Here are MongoDB related settings.
-const options = {
-  server: {
-    socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 }
-  },
-  replset: {
-    socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 }
-  },
-  useMongoClient: true
-};
-
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URL, options);
-const conn = mongoose.connection;
-conn.on('error', console.error.bind(console, 'connection error:'));
-conn.once('open', function() {
-  console.log('Connected to Mongo DB!');
-});
+// connect to the mongodb database
+require('./utils/dbConnect');
 
 app.prepare().then(() => {
   const server = express();
