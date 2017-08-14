@@ -1,5 +1,9 @@
-const createCustomer = require('./customer');
+const createTenant = require('./createTenant');
+const createProperty = require('./createProperty');
+const addTenantToProperty = require('./addTenantToProperty');
 
 module.exports = {
-  createCustomer
+  createTenant,
+  createProperty,
+  addTenantToProperty
 };

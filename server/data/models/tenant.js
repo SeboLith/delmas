@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const customerSchema = new mongoose.Schema({
+const tenantSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
+  phone: { type: String, required: true },
   updated_at: { type: Date, default: Date.now },
   created_at: { type: Date, default: Date.now }
 });
 
-customerSchema.pre('save', function(next) {
+tenantSchema.pre('save', function(next) {
   if (this.isNew) {
     this.created_at = new Date();
   }
@@ -15,4 +17,4 @@ customerSchema.pre('save', function(next) {
   next();
 });
 
-module.exports = mongoose.model('Customer', customerSchema);
+module.exports = mongoose.model('Tenant', tenantSchema);

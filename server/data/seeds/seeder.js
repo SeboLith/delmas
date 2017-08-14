@@ -1,11 +1,12 @@
 // Terminal string styling done right
 const chalk = require('chalk');
 
-const seedCustomers = require('./customers');
+const seedTenants = require('./tenants');
+const seedProperties = require('./properties');
 const conn = require('../../utils/dbConnect');
 
 const seeder = () => {
-  seedCustomers().then(() => {
+  seedProperties().then(seedTenants).then(() => {
     console.log(chalk.green(`data seeded`));
     conn.close();
   });

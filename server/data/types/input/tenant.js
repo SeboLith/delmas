@@ -5,9 +5,12 @@ const {
 } = require('graphql');
 
 module.exports = new GraphQLInputObjectType({
-  name: 'CustomerInput',
+  name: 'TenantInput',
   fields: {
     name: {
+      type: GraphQLString
+    },
+    phone: {
       type: GraphQLString
     },
     email: {

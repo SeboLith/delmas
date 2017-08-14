@@ -1,11 +1,11 @@
 const { GraphQLString } = require('graphql');
 
 const getProjection = require('../../utils/projection');
-const CustomerType = require('../types/customer');
-const Customer = require('../models/customer');
+const PropertyType = require('../types/property');
+const Property = require('../models/property');
 
 module.exports = {
-  type: CustomerType,
+  type: PropertyType,
   args: {
     id: {
       name: 'id',
@@ -15,7 +15,7 @@ module.exports = {
   resolve(root, { id }, source, fieldASTs) {
     return new Promise((resolve, reject) => {
       const projection = getProjection(fieldASTs);
-      Customer.findById(id)
+      Property.findById(id)
         .select(projection)
         .exec()
         .then(data => resolve(data))
